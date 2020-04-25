@@ -1,0 +1,26 @@
+{
+    "filename": "tilemap.png",
+    "textures":[
+        {
+            "id": "tile_grass",
+            "x": 0,
+            "y": 0,
+            "width": 16,
+            "height": 16
+        },
+        {
+            "id": "tile_stone",
+            "x": 16,
+            "y": 0,
+            "width": 16,
+            "height": 16
+        },
+        {
+            "id": "invalid",
+            "x": 32,
+            "y": 0,
+            "width": 16,
+            "height": 16
+        }
+    ]
+}

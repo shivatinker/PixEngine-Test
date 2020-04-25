@@ -1,0 +1,12 @@
+[
+    {
+        "id": 0,
+        "name": "Grass",
+        "texture": "tile_grass"
+    },
+    {
+        "id": 1,
+        "name": "Stone",
+        "texture": "tile_stone"
+    }
+]
