@@ -11,15 +11,15 @@ import PixeNgine
 
 public class HUDController: PXComponent, CharacterController {
     public weak var parent: Character?
-    
+
     private var velocity: PXv2f = .zero
 
-    public func onFrame() {
+    public func onFrame(context: GameContext) {
         parent!.pos = parent!.pos + velocity
-//        debugPrint(parent!.pos)
+        parent!.viewDirection = velocity.normalize()
     }
 
     public func setJoystickTilt(_ tilt: PXv2f) {
-        velocity = parent!.maxSpeed * tilt.normalize()
+        velocity = parent!.maxSpeed * tilt
     }
 }

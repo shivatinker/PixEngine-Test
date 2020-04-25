@@ -12,22 +12,29 @@ import Metal
 
 public protocol CharacterController {
     var parent: Character? { get set }
-    func onFrame()
+    func onFrame(context: GameContext)
 }
 
 extension Character: PXUpdateableEntity {
     public func onFrame() {
-        controller.onFrame()
+        controller.onFrame(context: context)
+        collider.fixCollision(context: context)
     }
 }
 
 public class Character: PXStaticSprite {
-    public var maxSpeed: Float = 3
+    public var maxSpeed: Float = 5
     public var controller: CharacterController
+    public var collider = BasicCollider()
+    public let context: GameContext
 
-    public init(name: String, controller: CharacterController) {
+    public var viewDirection: PXv2f = .ones
+
+    public init(context: GameContext, name: String, controller: CharacterController) {
         self.controller = controller
+        self.context = context
         super.init(name: name)
         self.controller.parent = self
+        self.collider.parent = self
     }
 }

@@ -22,6 +22,10 @@
 		DAA607C0243E873A00D0E349 /* PixeNgine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAA607BE243E873A00D0E349 /* PixeNgine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAA607E12440B11B00D0E349 /* tilemap.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA607E02440B11B00D0E349 /* tilemap.png */; };
 		DAA607E32440B17F00D0E349 /* tilemap.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DAA607E22440B17F00D0E349 /* tilemap.pxatlas */; };
+		DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA024546A5500FFD590 /* Projectile.swift */; };
+		DAC5DDA324546D9400FFD590 /* prejectiles_fire.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */; };
+		DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA92454ADF700FFD590 /* GameContext.swift */; };
+		DAC5DDAC2454B0BA00FFD590 /* Collider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDAB2454B0BA00FFD590 /* Collider.swift */; };
 		DAD4A19D2450CF390061167E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A19C2450CF390061167E /* Character.swift */; };
 		DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A1A12450D37E0061167E /* HUDController.swift */; };
 		DAF1199A2446274600208974 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF119992446274600208974 /* tiles.json */; };
@@ -59,6 +63,10 @@
 		DAA607BE243E873A00D0E349 /* PixeNgine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PixeNgine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA607E02440B11B00D0E349 /* tilemap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilemap.png; sourceTree = "<group>"; };
 		DAA607E22440B17F00D0E349 /* tilemap.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = tilemap.pxatlas; sourceTree = "<group>"; };
+		DAC5DDA024546A5500FFD590 /* Projectile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
+		DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = prejectiles_fire.pxatlas; sourceTree = "<group>"; };
+		DAC5DDA92454ADF700FFD590 /* GameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContext.swift; sourceTree = "<group>"; };
+		DAC5DDAB2454B0BA00FFD590 /* Collider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collider.swift; sourceTree = "<group>"; };
 		DAD4A19C2450CF390061167E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DAD4A1A12450D37E0061167E /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		DAF119992446274600208974 /* tiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tiles.json; sourceTree = "<group>"; };
@@ -137,6 +145,7 @@
 				DAA607E22440B17F00D0E349 /* tilemap.pxatlas */,
 				DA63B7C42450976F004DA60F /* controls.pxatlas */,
 				DA63B7C6245097FF004DA60F /* hero.pxatlas */,
+				DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */,
 			);
 			path = Textures;
 			sourceTree = "<group>";
@@ -147,6 +156,8 @@
 				DAD4A1A02450D3570061167E /* Components */,
 				DAF1199B2446452900208974 /* TestGame.swift */,
 				DAD4A19C2450CF390061167E /* Character.swift */,
+				DAC5DDA024546A5500FFD590 /* Projectile.swift */,
+				DAC5DDA92454ADF700FFD590 /* GameContext.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD4A1A12450D37E0061167E /* HUDController.swift */,
+				DAC5DDAB2454B0BA00FFD590 /* Collider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -237,6 +249,7 @@
 				DAA607E12440B11B00D0E349 /* tilemap.png in Resources */,
 				DA63B7C7245097FF004DA60F /* hero.pxatlas in Resources */,
 				DAA60781243E86CA00D0E349 /* Main.storyboard in Resources */,
+				DAC5DDA324546D9400FFD590 /* prejectiles_fire.pxatlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +262,11 @@
 			files = (
 				DAA6077E243E86CA00D0E349 /* ViewController.swift in Sources */,
 				DAA6077A243E86CA00D0E349 /* AppDelegate.swift in Sources */,
+				DAC5DDAC2454B0BA00FFD590 /* Collider.swift in Sources */,
 				DAA6077C243E86CA00D0E349 /* SceneDelegate.swift in Sources */,
+				DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */,
 				DAD4A19D2450CF390061167E /* Character.swift in Sources */,
+				DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */,
 				DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */,
 				DAF1199C2446452900208974 /* TestGame.swift in Sources */,
 			);

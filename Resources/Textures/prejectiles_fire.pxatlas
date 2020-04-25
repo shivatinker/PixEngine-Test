@@ -1,0 +1,12 @@
+{
+    "filename": "projectiles_fire.png",
+    "textures":[
+        {
+            "id": "proj_fire_ball",
+            "x": 0,
+            "y": 0,
+            "width": 16,
+            "height": 16
+        }
+    ]
+}

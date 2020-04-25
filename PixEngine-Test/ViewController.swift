@@ -34,8 +34,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        recognizer.addTarget(self, action: #selector(upd))
+        recognizer.delegate = self
+        view.addGestureRecognizer(recognizer)
+
+
+        recognizer2.addTarget(self, action: #selector(upd2))
         recognizer2.delegate = self
-        recognizer2.addTarget(self, action: #selector(upd))
         view.addGestureRecognizer(recognizer2)
         recognizer2.maximumNumberOfTouches = 1
 
@@ -46,7 +51,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private var active = false
 
     @objc
-    func upd() {
+    func upd2() {
         if recognizer2.state == .began {
             let l = recognizer2.initialTouchLocation
             game?.panStart(
@@ -62,7 +67,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         if recognizer2.state == .ended {
             game?.panEnd()
         }
+    }
 
+    @objc
+    func upd() {
+        if recognizer.state == .ended {
+            let loc = recognizer.location(in: mtkView)
+            game?.onTap(
+                Float(loc.x) / Float(mtkView.frame.maxX),
+                Float(loc.y) / Float(mtkView.frame.maxY))
+        }
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 

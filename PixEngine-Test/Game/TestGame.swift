@@ -11,8 +11,10 @@ import PixeNgine
 
 class TestGame {
     private let renderer: PXRenderer
+    private let scale: Int = 3
+
     private var screenW: Float {
-        renderer.width / (3.0 * 4.0)
+        renderer.width / Float((scale))
     }
     private var screenH: Float {
         screenW / renderer.aspectRatio
@@ -20,7 +22,6 @@ class TestGame {
     private var screenDimensions: PXv2f {
         PXv2f(screenW, screenH)
     }
-    private var currentScene: PXScene
 
     private var player: Character
     private var playerController: HUDController
@@ -28,8 +29,12 @@ class TestGame {
     private var jBg: PXStaticSprite
     private var jPin: PXStaticSprite
     private var jOrigin: PXv2f {
-        PXv2f(0, screenH) + PXv2f(40, -40)
+        PXv2f(0, screenH) + PXv2f(70, -70)
     }
+
+    private var spellButton: PXStaticSprite
+
+    private var gameContext: GameContext
 
     internal init(renderer: PXRenderer) {
         self.renderer = renderer
@@ -40,49 +45,83 @@ class TestGame {
             path: Bundle.main.resourceURL!.appendingPathComponent("tiles.json"))
 
 
+        // Create game context
+        gameContext = GameContext()
+
         // Create scene
-        currentScene = PXScene(width: 100, height: 100)
+        let scene = PXScene(width: 100, height: 100)
 
         // Create player
         playerController = HUDController()
-        player = Character(name: "Player", controller: playerController)
+        player = Character(context: gameContext, name: "Player", controller: playerController)
         player.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "sprite_player"))
 
         player.pos = PXv2f(300, 300)
-        currentScene.addEntity(player)
+        scene.addEntity(player)
 
         // Create HUD
+        spellButton = PXStaticSprite(name: "Spell button")
+        spellButton.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_pin"))
+
         jBg = PXStaticSprite(name: "Joystick background")
         jBg.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_bg"))
 
         jPin = PXStaticSprite(name: "Joystick pin")
         jPin.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_pin"))
 
+        jPin.scale = 2
         jPin.center = jOrigin
+        spellButton.scale = 2
+        spellButton.center = screenDimensions - 70.0 * .ones
 
-        currentScene.addHudEntity(jPin)
+        scene.addHudEntity(spellButton)
+        scene.addHudEntity(jPin)
 
         // Setup cameras
         let camera = PXFollowCamera(dimensions: screenDimensions, followBorder: (1 / 3.0) * screenDimensions, target: player)
         let hudCamera = PXCamera(dimensions: screenDimensions)
 
-        currentScene.camera = camera
-        currentScene.hudCamera = hudCamera
+        scene.camera = camera
+        scene.hudCamera = hudCamera
 
-        currentScene.addEntity(camera)
-        currentScene.addEntity(hudCamera)
+        scene.addEntity(camera)
+        scene.addEntity(hudCamera)
 
         // Setup background
-        for x in 0..<100 {
-            for y in 0..<100 {
-                currentScene.setBackgroundTile(
+        for x in 1..<99 {
+            for y in 1..<99 {
+                let tile: PXTile = PXTile(id: Int.random(in: 0...1))!
+                scene.setBackgroundTile(
                     x: x,
                     y: y,
-                    tile: PXTile(id: Int.random(in: 0...1))!)
+                    tile: tile)
             }
         }
 
-        renderer.scene = currentScene
+        for x in 0..<100 {
+            for y in [0, 99] {
+                let tile: PXTile = PXTile(id: 1)!
+                tile.solid = true
+                scene.setBackgroundTile(
+                    x: x,
+                    y: y,
+                    tile: tile)
+            }
+        }
+
+        for y in 0..<100 {
+            for x in [0, 99] {
+                let tile: PXTile = PXTile(id: 1)!
+                tile.solid = true
+                scene.setBackgroundTile(
+                    x: x,
+                    y: y,
+                    tile: tile)
+            }
+        }
+
+        gameContext.currentScene = scene
+        renderer.scene = scene
     }
 
     // MARK: User actions
@@ -116,9 +155,21 @@ class TestGame {
         let x = xn * screenW
         let y = yn * screenH
         let dVec: (PXv2f) = PXv2f(x, y)
-        let dist = min(dVec.abs, jBg.width / 2.0)
-        print(dVec.abs, dist)
-        jPin.center = jOrigin + dist * (dVec.normalize())
+        let dist = min(dVec.abs / (jBg.width / 2.0), 1)
+//        print(dVec.abs, dist)
+        jPin.center = jOrigin + dist * (jBg.width / 2.0) * (dVec.normalize())
         playerController.setJoystickTilt(dist * (dVec.normalize()))
+    }
+
+    public func onTap(_ xn: Float, _ yn: Float) {
+        let tapPos = PXv2f(xn * screenW, yn * screenH)
+        if spellButton.isInside(point: tapPos) {
+            let spell = Projectile(name: "Fireball!")
+            spell.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
+            spell.velocity = 8 * player.viewDirection
+            spell.center = player.center
+
+            gameContext.currentScene.addEntity(spell)
+        }
     }
 }
