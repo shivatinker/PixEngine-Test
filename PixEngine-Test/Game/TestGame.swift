@@ -56,7 +56,7 @@ class TestGame {
         player = Character(context: gameContext, name: "Player", controller: playerController)
         player.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "sprite_player"))
 
-        player.pos = PXv2f(300, 300)
+        player.pos = PXv2f(16, 16)
         scene.addEntity(player)
 
         // Create HUD
@@ -90,7 +90,8 @@ class TestGame {
         // Setup background
         for x in 1..<99 {
             for y in 1..<99 {
-                let tile: PXTile = PXTile(id: Int.random(in: 0...1))!
+                let id = 1//Int.random(in: 0...1)
+                let tile: PXTile = PXTile(id: id)!
                 scene.setBackgroundTile(
                     x: x,
                     y: y,
@@ -119,6 +120,11 @@ class TestGame {
                     tile: tile)
             }
         }
+
+        let light = PXLight(name: "l1", amount: 1.0, color: PXColor(r: 0.3, g: 0, b: 1, a: 1.0), radius: 200)
+        gameContext.playerLight = light
+//        light.pos = -30 * .ones
+        scene.addLight(light)
 
         gameContext.currentScene = scene
         renderer.scene = scene
@@ -168,8 +174,12 @@ class TestGame {
             spell.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
             spell.velocity = 8 * player.viewDirection
             spell.center = player.center
+            
 
+            let light = PXLight(name: "l1", amount: 1.0, color: PXColor(r: 1.0, g: 0.5, b: 0, a: 1.0), radius: 200)
+            spell.light = light
             gameContext.currentScene.addEntity(spell)
+            gameContext.currentScene.addLight(light)
         }
     }
 }

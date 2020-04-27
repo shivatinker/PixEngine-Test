@@ -12,4 +12,5 @@ import PixeNgine
 public class GameContext {
     public var currentScene: PXScene!
     public var player: Character!
+    public var playerLight: PXLight!
 }
