@@ -12,10 +12,9 @@ import PixeNgine
 public class Projectile: PXStaticSprite, PXUpdateableEntity {
     public func onFrame() {
         pos = pos + velocity
-        light?.pos = self.center
+//        light?.pos = self.center
     }
 
     public var velocity: PXv2f = .zero
-    public var light: PXLight?
     public override var outOfBoundsDiscardable: Bool { true }
 }

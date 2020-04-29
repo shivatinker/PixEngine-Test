@@ -43,6 +43,8 @@ class TestGame {
             path: Bundle.main.resourceURL!)
         try! PXConfig.resourceManager.loadTiles(
             path: Bundle.main.resourceURL!.appendingPathComponent("tiles.json"))
+        try! PXConfig.fontManager.loadAllFonts(
+            path: Bundle.main.resourceURL!)
 
 
         // Create game context
@@ -121,13 +123,18 @@ class TestGame {
             }
         }
 
-        let light = PXLight(name: "l1", amount: 1.0, color: PXColor(r: 0.3, g: 0, b: 1, a: 1.0), radius: 200)
+        let light = PXLight(amount: 3.0, color: PXColor(r: 0.3, g: 0, b: 1, a: 1.0), radius: 200)
         gameContext.playerLight = light
+        player.light = light
 //        light.pos = -30 * .ones
-        scene.addLight(light)
 
         gameContext.currentScene = scene
         renderer.scene = scene
+
+        let text = PXText(text: "0")
+        text.pos = 32 * .ones
+        scene.addHudEntity(text)
+        gameContext.scoreText = text
     }
 
     // MARK: User actions
@@ -174,12 +181,14 @@ class TestGame {
             spell.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
             spell.velocity = 8 * player.viewDirection
             spell.center = player.center
-            
 
-            let light = PXLight(name: "l1", amount: 1.0, color: PXColor(r: 1.0, g: 0.5, b: 0, a: 1.0), radius: 200)
+
+            let light = PXLight(amount: 1.0, color: PXColor(r: 1.0, g: 0.5, b: 0, a: 1.0), radius: 200)
             spell.light = light
             gameContext.currentScene.addEntity(spell)
-            gameContext.currentScene.addLight(light)
+
+            gameContext.score += 1
+            gameContext.scoreText.text = String(gameContext.score)
         }
     }
 }

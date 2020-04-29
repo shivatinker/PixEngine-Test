@@ -16,7 +16,7 @@ public class HUDController: PXComponent, CharacterController {
 
     public func onFrame(context: GameContext) {
         parent!.pos = parent!.pos + velocity
-        context.playerLight.pos = parent!.center
+//        context.playerLight.pos = parent!.center
         parent!.viewDirection = velocity.normalize()
     }
 

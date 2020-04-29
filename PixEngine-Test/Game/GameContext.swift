@@ -13,4 +13,6 @@ public class GameContext {
     public var currentScene: PXScene!
     public var player: Character!
     public var playerLight: PXLight!
+    public var scoreText: PXText!
+    public var score: Int = 0
 }

@@ -30,6 +30,8 @@
 		DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A1A12450D37E0061167E /* HUDController.swift */; };
 		DAF1199A2446274600208974 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF119992446274600208974 /* tiles.json */; };
 		DAF1199C2446452900208974 /* TestGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1199B2446452900208974 /* TestGame.swift */; };
+		DAF588922459FE7000F273A0 /* arcade.font in Resources */ = {isa = PBXBuildFile; fileRef = DAF588912459FE7000F273A0 /* arcade.font */; };
+		DAF588942459FF1B00F273A0 /* arcade.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF588932459FF1B00F273A0 /* arcade.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +73,8 @@
 		DAD4A1A12450D37E0061167E /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		DAF119992446274600208974 /* tiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tiles.json; sourceTree = "<group>"; };
 		DAF1199B2446452900208974 /* TestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGame.swift; sourceTree = "<group>"; };
+		DAF588912459FE7000F273A0 /* arcade.font */ = {isa = PBXFileReference; lastKnownFileType = text; path = arcade.font; sourceTree = "<group>"; };
+		DAF588932459FF1B00F273A0 /* arcade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arcade.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		DAA607DF2440B0F100D0E349 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DAF588902459FE5400F273A0 /* Fonts */,
 				DAF119932446225600208974 /* Descriptors */,
 				DAA607E42440B1A100D0E349 /* Textures */,
 			);
@@ -177,6 +182,15 @@
 				DAF119992446274600208974 /* tiles.json */,
 			);
 			path = Descriptors;
+			sourceTree = "<group>";
+		};
+		DAF588902459FE5400F273A0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DAF588932459FF1B00F273A0 /* arcade.png */,
+				DAF588912459FE7000F273A0 /* arcade.font */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,11 +257,13 @@
 				DAA60783243E86CC00D0E349 /* Assets.xcassets in Resources */,
 				DA63B7C1244E43F5004DA60F /* projectiles_fire.png in Resources */,
 				DAA607E32440B17F00D0E349 /* tilemap.pxatlas in Resources */,
+				DAF588922459FE7000F273A0 /* arcade.font in Resources */,
 				DA63B7C52450976F004DA60F /* controls.pxatlas in Resources */,
 				DA63B7C3244E43F5004DA60F /* controls.png in Resources */,
 				DAF1199A2446274600208974 /* tiles.json in Resources */,
 				DAA607E12440B11B00D0E349 /* tilemap.png in Resources */,
 				DA63B7C7245097FF004DA60F /* hero.pxatlas in Resources */,
+				DAF588942459FF1B00F273A0 /* arcade.png in Resources */,
 				DAA60781243E86CA00D0E349 /* Main.storyboard in Resources */,
 				DAC5DDA324546D9400FFD590 /* prejectiles_fire.pxatlas in Resources */,
 			);
