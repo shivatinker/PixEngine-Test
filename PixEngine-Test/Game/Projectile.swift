@@ -9,12 +9,32 @@
 import Foundation
 import PixeNgine
 
-public class Projectile: PXStaticSprite, PXUpdateableEntity {
-    public func onFrame() {
-        pos = pos + velocity
-//        light?.pos = self.center
+public class Projectile: PXEntity {
+    public var drawable = PXSpriteDrawable()
+    public var collider = BasicCollider()
+
+    public override func draw(context: PXDrawContext) {
+        drawable.draw(entity: self, context: context)
     }
 
+    private var context: GameContext
+
+    public override func update() {
+        pos = pos + velocity
+        if collider.fixCollision(context: context) {
+            onCollision()
+        }
+    }
+
+    private func onCollision() {
+        shouldBeRemoved = true
+    }
+    // MARK: State
     public var velocity: PXv2f = .zero
-    public override var outOfBoundsDiscardable: Bool { true }
+
+    public init(name: String, context: GameContext) {
+        self.context = context
+        super.init(name: name)
+        collider.parent = self
+    }
 }

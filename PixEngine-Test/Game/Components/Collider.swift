@@ -11,7 +11,8 @@ import PixeNgine
 
 public class BasicCollider: PXComponent {
     public weak var parent: PXEntity!
-    public func fixCollision(context: GameContext) {
+    public func fixCollision(context: GameContext) -> Bool {
+        var any = false
         let borderxy = context.currentScene.borderTiles(entity: parent)
         borderxy.forEach({ xy in
             if let tile = context.currentScene.getBackgroundTile(x: xy.x, y: xy.y),
@@ -28,7 +29,9 @@ public class BasicCollider: PXComponent {
                 case .right:
                     parent.pos = PXv2f(tile.rect.x1 - parent.width, parent.pos.y)
                 }
+                any = true
             }
         })
+        return any
     }
 }

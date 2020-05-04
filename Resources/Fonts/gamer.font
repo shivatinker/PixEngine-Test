@@ -1,0 +1,224 @@
+{
+    "size": "16",
+    "family": "Gamer",
+    "height": "11",
+    "style": "Medium",
+    "chars": [
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "1 1 9 11",
+        "code": "0"
+      },
+      {
+        "width": "9",
+        "offset": "0 8",
+        "rect": "11 1 7 11",
+        "code": "1"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "19 1 9 11",
+        "code": "2"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "29 1 9 11",
+        "code": "3"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "39 1 9 11",
+        "code": "4"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "49 1 9 11",
+        "code": "5"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "59 1 9 11",
+        "code": "6"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "69 1 9 11",
+        "code": "7"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "79 1 9 11",
+        "code": "8"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "89 1 9 11",
+        "code": "9"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "99 1 9 11",
+        "code": "a"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "109 1 9 11",
+        "code": "b"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "1 13 9 11",
+        "code": "c"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "11 13 9 11",
+        "code": "d"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "21 13 9 11",
+        "code": "e"
+      },
+      {
+        "width": "9",
+        "offset": "0 8",
+        "rect": "31 13 7 11",
+        "code": "f"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "39 13 9 15",
+        "code": "g"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "49 13 9 11",
+        "code": "h"
+      },
+      {
+        "width": "5",
+        "offset": "0 8",
+        "rect": "59 13 4 11",
+        "code": "i"
+      },
+      {
+        "width": "7",
+        "offset": "0 8",
+        "rect": "64 13 6 15",
+        "code": "j"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "71 13 9 11",
+        "code": "k"
+      },
+      {
+        "width": "7",
+        "offset": "0 8",
+        "rect": "81 13 6 11",
+        "code": "l"
+      },
+      {
+        "width": "16",
+        "offset": "0 8",
+        "rect": "88 13 14 11",
+        "code": "m"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "103 13 9 11",
+        "code": "n"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "113 13 9 11",
+        "code": "o"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "1 29 9 15",
+        "code": "p"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "11 29 9 15",
+        "code": "q"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "21 29 9 11",
+        "code": "r"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "31 29 9 11",
+        "code": "s"
+      },
+      {
+        "width": "9",
+        "offset": "0 8",
+        "rect": "41 29 7 11",
+        "code": "t"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "49 29 9 11",
+        "code": "u"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "59 29 9 11",
+        "code": "v"
+      },
+      {
+        "width": "16",
+        "offset": "0 8",
+        "rect": "69 29 14 11",
+        "code": "w"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "84 29 9 11",
+        "code": "x"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "94 29 9 15",
+        "code": "y"
+      },
+      {
+        "width": "11",
+        "offset": "0 8",
+        "rect": "104 29 9 11",
+        "code": "z"
+      }
+    ]
+}

@@ -26,6 +26,8 @@
 		DAC5DDA324546D9400FFD590 /* prejectiles_fire.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */; };
 		DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA92454ADF700FFD590 /* GameContext.swift */; };
 		DAC5DDAC2454B0BA00FFD590 /* Collider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDAB2454B0BA00FFD590 /* Collider.swift */; };
+		DACC32892460A8F100358A7F /* gamer.font in Resources */ = {isa = PBXBuildFile; fileRef = DACC32872460A8F000358A7F /* gamer.font */; };
+		DACC328A2460A8F100358A7F /* gamer.png in Resources */ = {isa = PBXBuildFile; fileRef = DACC32882460A8F000358A7F /* gamer.png */; };
 		DAD4A19D2450CF390061167E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A19C2450CF390061167E /* Character.swift */; };
 		DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A1A12450D37E0061167E /* HUDController.swift */; };
 		DAF1199A2446274600208974 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF119992446274600208974 /* tiles.json */; };
@@ -69,6 +71,8 @@
 		DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = prejectiles_fire.pxatlas; sourceTree = "<group>"; };
 		DAC5DDA92454ADF700FFD590 /* GameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContext.swift; sourceTree = "<group>"; };
 		DAC5DDAB2454B0BA00FFD590 /* Collider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collider.swift; sourceTree = "<group>"; };
+		DACC32872460A8F000358A7F /* gamer.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gamer.font; sourceTree = "<group>"; };
+		DACC32882460A8F000358A7F /* gamer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamer.png; sourceTree = "<group>"; };
 		DAD4A19C2450CF390061167E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DAD4A1A12450D37E0061167E /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		DAF119992446274600208974 /* tiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tiles.json; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				DAF588932459FF1B00F273A0 /* arcade.png */,
 				DAF588912459FE7000F273A0 /* arcade.font */,
+				DACC32882460A8F000358A7F /* gamer.png */,
+				DACC32872460A8F000358A7F /* gamer.font */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -254,11 +260,13 @@
 			files = (
 				DAA60786243E86CC00D0E349 /* LaunchScreen.storyboard in Resources */,
 				DA63B7C2244E43F5004DA60F /* hero.png in Resources */,
+				DACC32892460A8F100358A7F /* gamer.font in Resources */,
 				DAA60783243E86CC00D0E349 /* Assets.xcassets in Resources */,
 				DA63B7C1244E43F5004DA60F /* projectiles_fire.png in Resources */,
 				DAA607E32440B17F00D0E349 /* tilemap.pxatlas in Resources */,
 				DAF588922459FE7000F273A0 /* arcade.font in Resources */,
 				DA63B7C52450976F004DA60F /* controls.pxatlas in Resources */,
+				DACC328A2460A8F100358A7F /* gamer.png in Resources */,
 				DA63B7C3244E43F5004DA60F /* controls.png in Resources */,
 				DAF1199A2446274600208974 /* tiles.json in Resources */,
 				DAA607E12440B11B00D0E349 /* tilemap.png in Resources */,

@@ -55,26 +55,26 @@ class TestGame {
 
         // Create player
         playerController = HUDController()
-        player = Character(context: gameContext, name: "Player", controller: playerController)
-        player.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "sprite_player"))
+        let playerSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "sprite_player"))
+        player = Character(context: gameContext, name: "Player", controller: playerController, sprite: playerSprite)
 
         player.pos = PXv2f(16, 16)
+        gameContext.player = player
         scene.addEntity(player)
 
         // Create HUD
-        spellButton = PXStaticSprite(name: "Spell button")
-        spellButton.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_pin"))
+        spellButton = PXStaticSprite(name: "Cast spell button",
+                                     sprite: PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_pin")))
+        spellButton.drawable.scale = 2
 
-        jBg = PXStaticSprite(name: "Joystick background")
-        jBg.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_bg"))
+        jBg = PXStaticSprite(name: "Joystick background",
+                             sprite: PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_bg")))
 
-        jPin = PXStaticSprite(name: "Joystick pin")
-        jPin.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_pin"))
-
-        jPin.scale = 2
-        jPin.center = jOrigin
-        spellButton.scale = 2
+        jPin = PXStaticSprite(name: "Joystick pin",
+                              sprite: PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "control_joystick_pin")))
+        jPin.drawable.scale = 2
         spellButton.center = screenDimensions - 70.0 * .ones
+        jPin.center = jOrigin
 
         scene.addHudEntity(spellButton)
         scene.addHudEntity(jPin)
@@ -123,10 +123,10 @@ class TestGame {
             }
         }
 
-        let light = PXLight(amount: 3.0, color: PXColor(r: 0.3, g: 0, b: 1, a: 1.0), radius: 200)
+        let light = PXFollowLight(name: "PlayerLight", amount: 3.0, color: PXColor(r: 0.3, g: 0, b: 1, a: 1.0), radius: 200)
+        light.target = player
         gameContext.playerLight = light
-        player.light = light
-//        light.pos = -30 * .ones
+        scene.addEntity(light)
 
         gameContext.currentScene = scene
         renderer.scene = scene
@@ -177,18 +177,25 @@ class TestGame {
     public func onTap(_ xn: Float, _ yn: Float) {
         let tapPos = PXv2f(xn * screenW, yn * screenH)
         if spellButton.isInside(point: tapPos) {
-            let spell = Projectile(name: "Fireball!")
-            spell.animator.currentSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
+            let spell = Projectile(name: "Fireball!", context: gameContext)
+            spell.drawable.sprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
             spell.velocity = 8 * player.viewDirection
             spell.center = player.center
 
 
-            let light = PXLight(amount: 1.0, color: PXColor(r: 1.0, g: 0.5, b: 0, a: 1.0), radius: 200)
-            spell.light = light
+            let light = PXFollowLight(name: "Fireball Light",
+                                      amount: 1.0,
+                                      color: PXColor(r: 1.0, g: 0.5, b: 0, a: 1.0),
+                                      radius: 200)
+
+            light.target = spell
             gameContext.currentScene.addEntity(spell)
+            gameContext.currentScene.addEntity(light)
 
             gameContext.score += 1
             gameContext.scoreText.text = String(gameContext.score)
+            
+            gameContext.player.recieveDamage(damage: 14)
         }
     }
 }
