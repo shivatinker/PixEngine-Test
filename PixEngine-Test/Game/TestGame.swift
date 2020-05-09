@@ -9,6 +9,17 @@
 import Foundation
 import PixeNgine
 
+private class TimeHandler: PXEntity {
+    private let context: GameContext
+    override func update() {
+        context.time += 1
+    }
+    init(context: GameContext) {
+        self.context = context
+        super.init(name: "Time counter")
+    }
+}
+
 class TestGame {
     private let renderer: PXRenderer
     private let scale: Int = 3
@@ -40,18 +51,28 @@ class TestGame {
         self.renderer = renderer
 
         try! PXConfig.sharedTextureManager.loadAllTextures(
-            path: Bundle.main.resourceURL!)
+            path: Bundle.main.resourceURL!.appendingPathComponent("Textures"))
         try! PXConfig.resourceManager.loadTiles(
-            path: Bundle.main.resourceURL!.appendingPathComponent("tiles.json"))
+            path: Bundle.main.url(
+                forResource: "tiles", withExtension: "json",
+                subdirectory: "Descriptors")!)
         try! PXConfig.fontManager.loadAllFonts(
-            path: Bundle.main.resourceURL!)
+            path: Bundle.main.resourceURL!.appendingPathComponent("Fonts"))
 
 
         // Create game context
         gameContext = GameContext()
+        gameContext.luaVM = LuaVM()
+                
 
+        let urls = Bundle.main.urls(forResourcesWithExtension: "lua", subdirectory: "Scripts/Core")!
+        for url in urls {
+            gameContext.luaVM.loadLModule(url, name: url.deletingPathExtension().lastPathComponent)
+        }
+        
         // Create scene
         let scene = PXScene(width: 100, height: 100)
+        scene.addEntity(TimeHandler(context: gameContext))
 
         // Create player
         playerController = HUDController()
@@ -179,7 +200,8 @@ class TestGame {
         if spellButton.isInside(point: tapPos) {
             let spell = Projectile(name: "Fireball!", context: gameContext)
             spell.drawable.sprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
-            spell.velocity = 8 * player.viewDirection
+//            spell.velocity = 8 * player.viewDirection
+            spell.controller = LuaProjectileController(vm: gameContext.luaVM, moduleName: "fireball")
             spell.center = player.center
 
 
@@ -194,7 +216,7 @@ class TestGame {
 
             gameContext.score += 1
             gameContext.scoreText.text = String(gameContext.score)
-            
+
             gameContext.player.recieveDamage(damage: 14)
         }
     }

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA63B7C1244E43F5004DA60F /* projectiles_fire.png in Resources */ = {isa = PBXBuildFile; fileRef = DA63B7BE244E43F5004DA60F /* projectiles_fire.png */; };
-		DA63B7C2244E43F5004DA60F /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = DA63B7BF244E43F5004DA60F /* hero.png */; };
-		DA63B7C3244E43F5004DA60F /* controls.png in Resources */ = {isa = PBXBuildFile; fileRef = DA63B7C0244E43F5004DA60F /* controls.png */; };
-		DA63B7C52450976F004DA60F /* controls.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DA63B7C42450976F004DA60F /* controls.pxatlas */; };
-		DA63B7C7245097FF004DA60F /* hero.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DA63B7C6245097FF004DA60F /* hero.pxatlas */; };
+		419B4776ED0418D52F1B247C /* Pods_PixEngine_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */; };
+		DA92B33F246335CE00522899 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33B246335CD00522899 /* Fonts */; };
+		DA92B340246335CE00522899 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33C246335CE00522899 /* Scripts */; };
+		DA92B341246335CE00522899 /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33D246335CE00522899 /* Textures */; };
+		DA92B342246335CE00522899 /* Descriptors in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33E246335CE00522899 /* Descriptors */; };
 		DAA6077A243E86CA00D0E349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA60779243E86CA00D0E349 /* AppDelegate.swift */; };
 		DAA6077C243E86CA00D0E349 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6077B243E86CA00D0E349 /* SceneDelegate.swift */; };
 		DAA6077E243E86CA00D0E349 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6077D243E86CA00D0E349 /* ViewController.swift */; };
@@ -20,20 +20,12 @@
 		DAA60786243E86CC00D0E349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA60784243E86CC00D0E349 /* LaunchScreen.storyboard */; };
 		DAA607BF243E873A00D0E349 /* PixeNgine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA607BE243E873A00D0E349 /* PixeNgine.framework */; };
 		DAA607C0243E873A00D0E349 /* PixeNgine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAA607BE243E873A00D0E349 /* PixeNgine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DAA607E12440B11B00D0E349 /* tilemap.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA607E02440B11B00D0E349 /* tilemap.png */; };
-		DAA607E32440B17F00D0E349 /* tilemap.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DAA607E22440B17F00D0E349 /* tilemap.pxatlas */; };
 		DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA024546A5500FFD590 /* Projectile.swift */; };
-		DAC5DDA324546D9400FFD590 /* prejectiles_fire.pxatlas in Resources */ = {isa = PBXBuildFile; fileRef = DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */; };
 		DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA92454ADF700FFD590 /* GameContext.swift */; };
 		DAC5DDAC2454B0BA00FFD590 /* Collider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDAB2454B0BA00FFD590 /* Collider.swift */; };
-		DACC32892460A8F100358A7F /* gamer.font in Resources */ = {isa = PBXBuildFile; fileRef = DACC32872460A8F000358A7F /* gamer.font */; };
-		DACC328A2460A8F100358A7F /* gamer.png in Resources */ = {isa = PBXBuildFile; fileRef = DACC32882460A8F000358A7F /* gamer.png */; };
 		DAD4A19D2450CF390061167E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A19C2450CF390061167E /* Character.swift */; };
 		DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A1A12450D37E0061167E /* HUDController.swift */; };
-		DAF1199A2446274600208974 /* tiles.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF119992446274600208974 /* tiles.json */; };
 		DAF1199C2446452900208974 /* TestGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1199B2446452900208974 /* TestGame.swift */; };
-		DAF588922459FE7000F273A0 /* arcade.font in Resources */ = {isa = PBXBuildFile; fileRef = DAF588912459FE7000F273A0 /* arcade.font */; };
-		DAF588942459FF1B00F273A0 /* arcade.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF588932459FF1B00F273A0 /* arcade.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,11 +43,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DA63B7BE244E43F5004DA60F /* projectiles_fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectiles_fire.png; sourceTree = "<group>"; };
-		DA63B7BF244E43F5004DA60F /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
-		DA63B7C0244E43F5004DA60F /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controls.png; sourceTree = "<group>"; };
-		DA63B7C42450976F004DA60F /* controls.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = controls.pxatlas; sourceTree = "<group>"; };
-		DA63B7C6245097FF004DA60F /* hero.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = hero.pxatlas; sourceTree = "<group>"; };
+		6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.debug.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.debug.xcconfig"; sourceTree = "<group>"; };
+		82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixEngine_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA92B33B246335CD00522899 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
+		DA92B33C246335CE00522899 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Resources/Scripts; sourceTree = "<group>"; };
+		DA92B33D246335CE00522899 /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Textures; path = Resources/Textures; sourceTree = "<group>"; };
+		DA92B33E246335CE00522899 /* Descriptors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Descriptors; path = Resources/Descriptors; sourceTree = "<group>"; };
 		DAA60776243E86CA00D0E349 /* PixEngine-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PixEngine-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA60779243E86CA00D0E349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA6077B243E86CA00D0E349 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,20 +58,16 @@
 		DAA60785243E86CC00D0E349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAA60787243E86CC00D0E349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA607BE243E873A00D0E349 /* PixeNgine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PixeNgine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAA607E02440B11B00D0E349 /* tilemap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilemap.png; sourceTree = "<group>"; };
-		DAA607E22440B17F00D0E349 /* tilemap.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = tilemap.pxatlas; sourceTree = "<group>"; };
 		DAC5DDA024546A5500FFD590 /* Projectile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
-		DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */ = {isa = PBXFileReference; lastKnownFileType = text; path = prejectiles_fire.pxatlas; sourceTree = "<group>"; };
 		DAC5DDA92454ADF700FFD590 /* GameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContext.swift; sourceTree = "<group>"; };
 		DAC5DDAB2454B0BA00FFD590 /* Collider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collider.swift; sourceTree = "<group>"; };
-		DACC32872460A8F000358A7F /* gamer.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gamer.font; sourceTree = "<group>"; };
-		DACC32882460A8F000358A7F /* gamer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamer.png; sourceTree = "<group>"; };
 		DAD4A19C2450CF390061167E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DAD4A1A12450D37E0061167E /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
-		DAF119992446274600208974 /* tiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tiles.json; sourceTree = "<group>"; };
 		DAF1199B2446452900208974 /* TestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGame.swift; sourceTree = "<group>"; };
-		DAF588912459FE7000F273A0 /* arcade.font */ = {isa = PBXFileReference; lastKnownFileType = text; path = arcade.font; sourceTree = "<group>"; };
-		DAF588932459FF1B00F273A0 /* arcade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arcade.png; sourceTree = "<group>"; };
+		DAF657DF2460D86E00453FDA /* Lua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF657E22460D88A00453FDA /* Pods_PixeNgine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PixeNgine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF657E52460D92D00453FDA /* Lua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB223A8A20A15A8A5412B774 /* Pods-PixEngine-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.release.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,19 +76,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA607BF243E873A00D0E349 /* PixeNgine.framework in Frameworks */,
+				419B4776ED0418D52F1B247C /* Pods_PixEngine_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95AE3A70497B4D74855EBF50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */,
+				EB223A8A20A15A8A5412B774 /* Pods-PixEngine-Test.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../PixeNgine/Pods;
+			sourceTree = "<group>";
+		};
+		DA92B3162463359500522899 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA92B33E246335CE00522899 /* Descriptors */,
+				DA92B33B246335CD00522899 /* Fonts */,
+				DA92B33C246335CE00522899 /* Scripts */,
+				DA92B33D246335CE00522899 /* Textures */,
+			);
+			name = Resources;
+			path = "../PixEngine-Test/Resources";
+			sourceTree = "<group>";
+		};
 		DAA6076D243E86CA00D0E349 = {
 			isa = PBXGroup;
 			children = (
-				DAA607DF2440B0F100D0E349 /* Resources */,
+				DA92B3162463359500522899 /* Resources */,
 				DAA60778243E86CA00D0E349 /* PixEngine-Test */,
 				DAA60777243E86CA00D0E349 /* Products */,
 				DAA607BD243E873A00D0E349 /* Frameworks */,
+				95AE3A70497B4D74855EBF50 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,34 +142,13 @@
 		DAA607BD243E873A00D0E349 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAF657E52460D92D00453FDA /* Lua.framework */,
+				DAF657E22460D88A00453FDA /* Pods_PixeNgine.framework */,
+				DAF657DF2460D86E00453FDA /* Lua.framework */,
 				DAA607BE243E873A00D0E349 /* PixeNgine.framework */,
+				82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DAA607DF2440B0F100D0E349 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DAF588902459FE5400F273A0 /* Fonts */,
-				DAF119932446225600208974 /* Descriptors */,
-				DAA607E42440B1A100D0E349 /* Textures */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		DAA607E42440B1A100D0E349 /* Textures */ = {
-			isa = PBXGroup;
-			children = (
-				DA63B7C0244E43F5004DA60F /* controls.png */,
-				DA63B7BF244E43F5004DA60F /* hero.png */,
-				DA63B7BE244E43F5004DA60F /* projectiles_fire.png */,
-				DAA607E02440B11B00D0E349 /* tilemap.png */,
-				DAA607E22440B17F00D0E349 /* tilemap.pxatlas */,
-				DA63B7C42450976F004DA60F /* controls.pxatlas */,
-				DA63B7C6245097FF004DA60F /* hero.pxatlas */,
-				DAC5DDA224546D9400FFD590 /* prejectiles_fire.pxatlas */,
-			);
-			path = Textures;
 			sourceTree = "<group>";
 		};
 		DAD4A19B2450CF280061167E /* Game */ = {
@@ -180,25 +172,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		DAF119932446225600208974 /* Descriptors */ = {
-			isa = PBXGroup;
-			children = (
-				DAF119992446274600208974 /* tiles.json */,
-			);
-			path = Descriptors;
-			sourceTree = "<group>";
-		};
-		DAF588902459FE5400F273A0 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				DAF588932459FF1B00F273A0 /* arcade.png */,
-				DAF588912459FE7000F273A0 /* arcade.font */,
-				DACC32882460A8F000358A7F /* gamer.png */,
-				DACC32872460A8F000358A7F /* gamer.font */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAA6078A243E86CC00D0E349 /* Build configuration list for PBXNativeTarget "PixEngine-Test" */;
 			buildPhases = (
+				0C87F2B3850BF17BC29EFBFF /* [CP] Check Pods Manifest.lock */,
 				DAA60772243E86CA00D0E349 /* Sources */,
 				DAA60773243E86CA00D0E349 /* Frameworks */,
 				DAA60774243E86CA00D0E349 /* Resources */,
@@ -235,7 +209,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixEngine-Test" */;
+			buildConfigurationList = DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixeNgine-Test" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -258,26 +232,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA92B341246335CE00522899 /* Textures in Resources */,
 				DAA60786243E86CC00D0E349 /* LaunchScreen.storyboard in Resources */,
-				DA63B7C2244E43F5004DA60F /* hero.png in Resources */,
-				DACC32892460A8F100358A7F /* gamer.font in Resources */,
+				DA92B340246335CE00522899 /* Scripts in Resources */,
 				DAA60783243E86CC00D0E349 /* Assets.xcassets in Resources */,
-				DA63B7C1244E43F5004DA60F /* projectiles_fire.png in Resources */,
-				DAA607E32440B17F00D0E349 /* tilemap.pxatlas in Resources */,
-				DAF588922459FE7000F273A0 /* arcade.font in Resources */,
-				DA63B7C52450976F004DA60F /* controls.pxatlas in Resources */,
-				DACC328A2460A8F100358A7F /* gamer.png in Resources */,
-				DA63B7C3244E43F5004DA60F /* controls.png in Resources */,
-				DAF1199A2446274600208974 /* tiles.json in Resources */,
-				DAA607E12440B11B00D0E349 /* tilemap.png in Resources */,
-				DA63B7C7245097FF004DA60F /* hero.pxatlas in Resources */,
-				DAF588942459FF1B00F273A0 /* arcade.png in Resources */,
+				DA92B342246335CE00522899 /* Descriptors in Resources */,
 				DAA60781243E86CA00D0E349 /* Main.storyboard in Resources */,
-				DAC5DDA324546D9400FFD590 /* prejectiles_fire.pxatlas in Resources */,
+				DA92B33F246335CE00522899 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C87F2B3850BF17BC29EFBFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixEngine-Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAA60772243E86CA00D0E349 /* Sources */ = {
@@ -434,6 +424,7 @@
 		};
 		DAA6078B243E86CC00D0E349 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +443,7 @@
 		};
 		DAA6078C243E86CC00D0E349 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB223A8A20A15A8A5412B774 /* Pods-PixEngine-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,7 +463,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixEngine-Test" */ = {
+		DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixeNgine-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAA60788243E86CC00D0E349 /* Debug */,

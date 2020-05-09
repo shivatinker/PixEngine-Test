@@ -15,4 +15,6 @@ public class GameContext {
     public var playerLight: PXLight!
     public var scoreText: PXText!
     public var score: Int = 0
+    public var time: Int64 = 0
+    public var luaVM: LuaVM!
 }
