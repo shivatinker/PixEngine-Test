@@ -28,6 +28,20 @@
 		DAF1199C2446452900208974 /* TestGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1199B2446452900208974 /* TestGame.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		DAF9AB1F246844E400382CE1 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.metal;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# metal\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		DAA607C1243E873A00D0E349 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -186,6 +200,7 @@
 				DAA607C1243E873A00D0E349 /* Embed Frameworks */,
 			);
 			buildRules = (
+				DAF9AB1F246844E400382CE1 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -437,7 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shivatinker.PixEngineTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shivatinker.PixEngineTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

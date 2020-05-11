@@ -1,0 +1,15 @@
+{
+    "id": "fireball",
+    "controllerScript": "fireball",
+    "spriteId": "proj_fire_ball",
+    "light": {
+        "color": {
+            "r": 1.0,
+            "g": 0.5,
+            "b": 0.0,
+            "a": 1.0
+        },
+        "amount": 1.0,
+        "radius": 400
+    }
+}

@@ -63,13 +63,13 @@ class TestGame {
         // Create game context
         gameContext = GameContext()
         gameContext.luaVM = LuaVM()
-                
+
 
         let urls = Bundle.main.urls(forResourcesWithExtension: "lua", subdirectory: "Scripts/Core")!
         for url in urls {
             gameContext.luaVM.loadLModule(url, name: url.deletingPathExtension().lastPathComponent)
         }
-        
+
         // Create scene
         let scene = PXScene(width: 100, height: 100)
         scene.addEntity(TimeHandler(context: gameContext))
@@ -198,26 +198,22 @@ class TestGame {
     public func onTap(_ xn: Float, _ yn: Float) {
         let tapPos = PXv2f(xn * screenW, yn * screenH)
         if spellButton.isInside(point: tapPos) {
-            let spell = Projectile(name: "Fireball!", context: gameContext)
-            spell.drawable.sprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "proj_fire_ball"))
-//            spell.velocity = 8 * player.viewDirection
-            spell.controller = LuaProjectileController(vm: gameContext.luaVM, moduleName: "fireball")
-            spell.center = player.center
 
+            for _ in 0..<100 {
+                let spell = Projectile(
+                    descriptor: PXConfig.resourceManager.loadFile(
+                        ProjectileDescriptor.self,
+                        file: Bundle.main.url(forResource: "fireball", withExtension: "json", subdirectory: "Descriptors/Projectiles")!),
+                    context: gameContext)
+                spell.center = player.center
 
-            let light = PXFollowLight(name: "Fireball Light",
-                                      amount: 1.0,
-                                      color: PXColor(r: 1.0, g: 0.5, b: 0, a: 1.0),
-                                      radius: 200)
+                gameContext.currentScene.addEntity(spell)
 
-            light.target = spell
-            gameContext.currentScene.addEntity(spell)
-            gameContext.currentScene.addEntity(light)
+                gameContext.score += 1
+                gameContext.scoreText.text = String(gameContext.score)
 
-            gameContext.score += 1
-            gameContext.scoreText.text = String(gameContext.score)
-
-            gameContext.player.recieveDamage(damage: 14)
+                gameContext.player.recieveDamage(damage: 14)
+            }
         }
     }
 }
