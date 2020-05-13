@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		419B4776ED0418D52F1B247C /* Pods_PixEngine_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */; };
+		DA5D37C1246B0A6F006AB361 /* LuaScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */; };
 		DA92B33F246335CE00522899 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33B246335CD00522899 /* Fonts */; };
 		DA92B340246335CE00522899 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33C246335CE00522899 /* Scripts */; };
 		DA92B341246335CE00522899 /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33D246335CE00522899 /* Textures */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.debug.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixEngine_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaScripting.swift; sourceTree = "<group>"; };
 		DA92B33B246335CD00522899 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
 		DA92B33C246335CE00522899 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Resources/Scripts; sourceTree = "<group>"; };
 		DA92B33D246335CE00522899 /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Textures; path = Resources/Textures; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				DAD4A19C2450CF390061167E /* Character.swift */,
 				DAC5DDA024546A5500FFD590 /* Projectile.swift */,
 				DAC5DDA92454ADF700FFD590 /* GameContext.swift */,
+				DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -224,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixeNgine-Test" */;
+			buildConfigurationList = DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixEngine-Test" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -297,6 +300,7 @@
 				DAD4A19D2450CF390061167E /* Character.swift in Sources */,
 				DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */,
 				DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */,
+				DA5D37C1246B0A6F006AB361 /* LuaScripting.swift in Sources */,
 				DAF1199C2446452900208974 /* TestGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +482,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixeNgine-Test" */ = {
+		DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixEngine-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAA60788243E86CC00D0E349 /* Debug */,

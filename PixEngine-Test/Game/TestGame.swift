@@ -62,13 +62,7 @@ class TestGame {
 
         // Create game context
         gameContext = GameContext()
-        gameContext.luaVM = LuaVM()
-
-
-        let urls = Bundle.main.urls(forResourcesWithExtension: "lua", subdirectory: "Scripts/Core")!
-        for url in urls {
-            gameContext.luaVM.loadLModule(url, name: url.deletingPathExtension().lastPathComponent)
-        }
+        gameContext.lua = LuaScripting(context: gameContext)
 
         // Create scene
         let scene = PXScene(width: 100, height: 100)
@@ -199,7 +193,7 @@ class TestGame {
         let tapPos = PXv2f(xn * screenW, yn * screenH)
         if spellButton.isInside(point: tapPos) {
 
-            for _ in 0..<100 {
+            for _ in 0..<1 {
                 let spell = Projectile(
                     descriptor: PXConfig.resourceManager.loadFile(
                         ProjectileDescriptor.self,
@@ -208,11 +202,6 @@ class TestGame {
                 spell.center = player.center
 
                 gameContext.currentScene.addEntity(spell)
-
-                gameContext.score += 1
-                gameContext.scoreText.text = String(gameContext.score)
-
-                gameContext.player.recieveDamage(damage: 14)
             }
         }
     }
