@@ -31,7 +31,7 @@ function module.onCollision(id, to, norm)
     end
     
     if (scene.isCharacter(to) == 1) then
-        -- projectile.destroy(id)
+        projectile.destroy(id)
         character.recieveDamage(to, 1)
         game.incScore(1)
     end
