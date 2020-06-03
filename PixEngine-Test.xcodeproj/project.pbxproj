@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		419B4776ED0418D52F1B247C /* Pods_PixEngine_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */; };
 		DA5D37C1246B0A6F006AB361 /* LuaScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */; };
 		DA92B33F246335CE00522899 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33B246335CD00522899 /* Fonts */; };
 		DA92B340246335CE00522899 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33C246335CE00522899 /* Scripts */; };
@@ -19,8 +18,8 @@
 		DAA60781243E86CA00D0E349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA6077F243E86CA00D0E349 /* Main.storyboard */; };
 		DAA60783243E86CC00D0E349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA60782243E86CC00D0E349 /* Assets.xcassets */; };
 		DAA60786243E86CC00D0E349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA60784243E86CC00D0E349 /* LaunchScreen.storyboard */; };
-		DAA607BF243E873A00D0E349 /* PixeNgine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA607BE243E873A00D0E349 /* PixeNgine.framework */; };
-		DAA607C0243E873A00D0E349 /* PixeNgine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAA607BE243E873A00D0E349 /* PixeNgine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAB81DE82487DDFA00CDB317 /* PixeNgine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB81DE72487DDFA00CDB317 /* PixeNgine.framework */; };
+		DAB81DE92487DDFA00CDB317 /* PixeNgine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAB81DE72487DDFA00CDB317 /* PixeNgine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA024546A5500FFD590 /* Projectile.swift */; };
 		DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5DDA92454ADF700FFD590 /* GameContext.swift */; };
 		DAD4A19D2450CF390061167E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD4A19C2450CF390061167E /* Character.swift */; };
@@ -43,13 +42,13 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DAA607C1243E873A00D0E349 /* Embed Frameworks */ = {
+		DAB81DE42487DC0B00CDB317 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DAA607C0243E873A00D0E349 /* PixeNgine.framework in Embed Frameworks */,
+				DAB81DE92487DDFA00CDB317 /* PixeNgine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,8 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.debug.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.debug.xcconfig"; sourceTree = "<group>"; };
-		82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixEngine_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaScripting.swift; sourceTree = "<group>"; };
 		DA92B33B246335CD00522899 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
 		DA92B33C246335CE00522899 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Resources/Scripts; sourceTree = "<group>"; };
@@ -72,16 +69,12 @@
 		DAA60782243E86CC00D0E349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAA60785243E86CC00D0E349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAA60787243E86CC00D0E349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAA607BE243E873A00D0E349 /* PixeNgine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PixeNgine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAB81DE72487DDFA00CDB317 /* PixeNgine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PixeNgine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC5DDA024546A5500FFD590 /* Projectile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		DAC5DDA92454ADF700FFD590 /* GameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContext.swift; sourceTree = "<group>"; };
 		DAD4A19C2450CF390061167E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DAD4A1A12450D37E0061167E /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		DAF1199B2446452900208974 /* TestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGame.swift; sourceTree = "<group>"; };
-		DAF657DF2460D86E00453FDA /* Lua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAF657E22460D88A00453FDA /* Pods_PixeNgine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PixeNgine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAF657E52460D92D00453FDA /* Lua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB223A8A20A15A8A5412B774 /* Pods-PixEngine-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.release.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,24 +82,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAA607BF243E873A00D0E349 /* PixeNgine.framework in Frameworks */,
-				419B4776ED0418D52F1B247C /* Pods_PixEngine_Test.framework in Frameworks */,
+				DAB81DE82487DDFA00CDB317 /* PixeNgine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95AE3A70497B4D74855EBF50 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */,
-				EB223A8A20A15A8A5412B774 /* Pods-PixEngine-Test.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../PixeNgine/Pods;
-			sourceTree = "<group>";
-		};
 		DA92B3162463359500522899 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +108,6 @@
 				DAA60778243E86CA00D0E349 /* PixEngine-Test */,
 				DAA60777243E86CA00D0E349 /* Products */,
 				DAA607BD243E873A00D0E349 /* Frameworks */,
-				95AE3A70497B4D74855EBF50 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,11 +137,7 @@
 		DAA607BD243E873A00D0E349 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DAF657E52460D92D00453FDA /* Lua.framework */,
-				DAF657E22460D88A00453FDA /* Pods_PixeNgine.framework */,
-				DAF657DF2460D86E00453FDA /* Lua.framework */,
-				DAA607BE243E873A00D0E349 /* PixeNgine.framework */,
-				82CFA97E74612E490E690F1B /* Pods_PixEngine_Test.framework */,
+				DAB81DE72487DDFA00CDB317 /* PixeNgine.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,11 +170,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAA6078A243E86CC00D0E349 /* Build configuration list for PBXNativeTarget "PixEngine-Test" */;
 			buildPhases = (
-				0C87F2B3850BF17BC29EFBFF /* [CP] Check Pods Manifest.lock */,
 				DAA60772243E86CA00D0E349 /* Sources */,
 				DAA60773243E86CA00D0E349 /* Frameworks */,
 				DAA60774243E86CA00D0E349 /* Resources */,
-				DAA607C1243E873A00D0E349 /* Embed Frameworks */,
+				DAB81DE42487DC0B00CDB317 /* Embed Frameworks */,
 			);
 			buildRules = (
 				DAF9AB1F246844E400382CE1 /* PBXBuildRule */,
@@ -224,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixeNgine-Test" */;
+			buildConfigurationList = DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixEngine-Test" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -258,31 +234,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0C87F2B3850BF17BC29EFBFF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PixEngine-Test-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAA60772243E86CA00D0E349 /* Sources */ = {
@@ -323,66 +274,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DAA60788243E86CC00D0E349 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
 		DAA60789243E86CC00D0E349 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -437,28 +328,8 @@
 			};
 			name = Release;
 		};
-		DAA6078B243E86CC00D0E349 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C916F436360BA940B62254D /* Pods-PixEngine-Test.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2V8DLQ6638;
-				INFOPLIST_FILE = "PixEngine-Test/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shivatinker.PixEngineTestGame;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
 		DAA6078C243E86CC00D0E349 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB223A8A20A15A8A5412B774 /* Pods-PixEngine-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,14 +346,86 @@
 			};
 			name = Release;
 		};
+		DAB81DE52487DD6700CDB317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		DAB81DE62487DD6700CDB317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2V8DLQ6638;
+				INFOPLIST_FILE = "PixEngine-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shivatinker.PixEngineTestGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixeNgine-Test" */ = {
+		DAA60771243E86CA00D0E349 /* Build configuration list for PBXProject "PixEngine-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAA60788243E86CC00D0E349 /* Debug */,
 				DAA60789243E86CC00D0E349 /* Release */,
+				DAB81DE52487DD6700CDB317 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -490,8 +433,8 @@
 		DAA6078A243E86CC00D0E349 /* Build configuration list for PBXNativeTarget "PixEngine-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAA6078B243E86CC00D0E349 /* Debug */,
 				DAA6078C243E86CC00D0E349 /* Release */,
+				DAB81DE62487DD6700CDB317 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
