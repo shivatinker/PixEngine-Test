@@ -12,11 +12,13 @@ import UIKit
 
 // MARK: Lua
 public class LuaProjectileController: ProjectileController {
+    
     // Lua module
     public static let lModule: LuaLModule = LuaLModule(functions: [
         LuaFunction(name: "update", args: 1, res: 0),
         LuaFunction(name: "init", args: 1, res: 0),
         LuaFunction(name: "destroy", args: 1, res: 0),
+        LuaFunction(name: "onCollision", args: 3, res: 0),
     ])
     private let script: String
 
@@ -32,6 +34,11 @@ public class LuaProjectileController: ProjectileController {
         context.lua.vm.call(module: Self.lModule, script: script, f: "destroy", projectile.id)
     }
     
+    public func onCollisionResolved(context: GameContext, projectile: Projectile, with: PXEntity, normal: PXv2f) {
+        context.lua.vm.call(module: Self.lModule, script: script,
+                            f: "onCollision", projectile.id, with.id, normal.luaValue)
+    }
+    
     init(moduleName: String) {
         script = moduleName
     }
@@ -44,9 +51,16 @@ public protocol ProjectileController {
     func update(context: GameContext, projectile: Projectile)
     func onInit(context: GameContext, projectile: Projectile)
     func onDestroy(context: GameContext, projectile: Projectile)
+    func onCollisionResolved(context: GameContext, projectile: Projectile, with: PXEntity, normal: PXv2f)
 }
 
-public class Projectile: PXEntity {    
+extension Projectile: PXPhysicsDelegate{
+    public func onCollisionResolved(entity: PXEntity, with: PXEntity, normal: PXv2f) {
+        controller?.onCollisionResolved(context: context, projectile: self, with: with, normal: normal)
+    }
+}
+
+public class Projectile: PXEntity {
     private var context: GameContext
     public override var dimensions: PXv2f {
         drawable.dimensions
@@ -54,7 +68,6 @@ public class Projectile: PXEntity {
     // MARK: Components
     public var drawable = PXSpriteDrawable()
     public var controller: ProjectileController?
-    public var physics = PXPhysics()
 
     // MARK: Update methods
     public override func draw(context: PXDrawContext) {
@@ -63,14 +76,8 @@ public class Projectile: PXEntity {
 
     public override func update() {
         controller?.update(context: context, projectile: self)
-        physics.update(entity: self)
+        super.update()
     }
-
-    private func onCollision() {
-        shouldBeRemoved = true
-//        state.velocity = state.velocity.abs * (context.player.center - self.center).normalize()
-    }
-
 
     public init(name: String, context: GameContext) {
         self.context = context
@@ -88,6 +95,11 @@ public class Projectile: PXEntity {
             self.subentities.append(light)
         }
         drawable.sprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: descriptor.spriteId))
+        
+        let physics = PXPhysics(shape: .rect(width: width, height: height))
+        physics.delegate = self
+        
+        self.physics = physics
         
         controller?.onInit(context: context, projectile: self)
     }

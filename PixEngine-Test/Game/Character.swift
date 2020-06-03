@@ -29,7 +29,7 @@ public class Character: PXEntity {
 
     public override func update() {
         controller.onFrame(context: context)
-        collider.fixCollision(context: context)
+        super.update()
     }
 
     public let context: GameContext
@@ -41,7 +41,6 @@ public class Character: PXEntity {
 
     // MARK: Components
     public var controller: CharacterController
-    public var collider = BasicCollider()
 
     public func recieveDamage(damage: Int) {
         let text = PXBlobText(text: String(damage), pos: pos, height: 100)
@@ -56,6 +55,10 @@ public class Character: PXEntity {
         self.drawable.sprite = sprite
         super.init(name: name)
         self.controller.parent = self
-        self.collider.parent = self
+        
+        let physics = PXPhysics(shape: .rect(width: width, height: height))
+        physics.hardness = 0
+//        physics.delegate = self
+        self.physics = physics
     }
 }

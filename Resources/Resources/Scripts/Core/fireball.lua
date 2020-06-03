@@ -11,24 +11,39 @@ local function vector_mul(v, c)
 end
 
 function module.update(id)
-    if (game.time() - init_times[id]) > 60 then
+    --[[if (game.time() - init_times[id]) > 60 then
         init_times[id] = game.time()
         local pid = scene.addProjectile('fireball')
         local p = projectile.getPos(id)
         
         projectile.setPos(pid, p)
         
+    end]]
+end
+
+function module.onCollision(id, to, norm)
+
+    projectile.setVelocity(id, vector_mul(projectile.getVelocity(id), -1))
+
+    if (scene.isStatic(to) == 1) then
+        projectile.destroy(id)
+        return
+    end
+    
+    if (scene.isCharacter(to) == 1) then
+        -- projectile.destroy(id)
+        character.recieveDamage(to, 1)
+        game.incScore(1)
     end
 end
 
 function module.init(id)
     init_times[id] = game.time()
-    projectile.setVelocity(id, vector_mul(random_norm(), 7))
-    game.incScore()
+    projectile.setVelocity(id, vector_mul(random_norm(), 3))
 end
 
 function module.destroy(id)
-    game.decScore()
+    
 end
 
 function module.tabletest(t)

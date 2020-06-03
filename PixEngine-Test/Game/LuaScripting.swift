@@ -22,11 +22,11 @@ public class LuaScripting {
     private lazy var cModules: [LuaCModule] = [
         LuaCModule(name: "projectile", functions: [
             LuaCFunction(name: "setVelocity", args: 2, res: 0, body: {
-                self.getEntityByID($0[0], as: Projectile.self).physics.velocity = PXv2f.fromLua($0[1])
+                self.getEntityByID($0[0], as: Projectile.self).physics?.velocity = PXv2f.fromLua($0[1])
                 return []
             }),
             LuaCFunction(name: "getVelocity", args: 1, res: 1, body: {
-                [self.getEntityByID($0[0], as: Projectile.self).physics.velocity.luaValue]
+                [self.getEntityByID($0[0], as: Projectile.self).physics?.velocity.luaValue ?? 0]
             }),
             LuaCFunction(name: "setPos", args: 2, res: 0, body: {
                 self.getEntityByID($0[0], as: Projectile.self).pos = PXv2f.fromLua($0[1])
@@ -34,20 +34,24 @@ public class LuaScripting {
             }),
             LuaCFunction(name: "getPos", args: 1, res: 1, body: {
                 [self.getEntityByID($0[0], as: Projectile.self).pos.luaValue]
-            })
+            }),
+            LuaCFunction(name: "destroy", args: 1, res: 0, body: {
+                self.getEntityByID($0[0], as: Projectile.self).shouldBeRemoved = true
+                return []
+            }),
         ]),
 
         LuaCModule(name: "game", functions: [
             LuaCFunction(name: "time", args: 0, res: 1) { args in
                 return [self.context.time]
             },
-            LuaCFunction(name: "incScore", args: 0, res: 0) { args in
-                self.context.score += 1
+            LuaCFunction(name: "incScore", args: 1, res: 0) { args in
+                self.context.score += Int(args[0] as! Int64)
                 self.context.scoreText.text = String(self.context.score)
                 return []
             },
-            LuaCFunction(name: "decScore", args: 0, res: 0) { args in
-                self.context.score -= 1
+            LuaCFunction(name: "decScore", args: 1, res: 0) { args in
+                self.context.score -= Int(args[0] as! Int64)
                 self.context.scoreText.text = String(self.context.score)
                 return []
             },
@@ -63,8 +67,28 @@ public class LuaScripting {
                     context: self.context)
                 self.context.currentScene.addEntity(e)
                 return [e.id]
-            }
+            },
+            LuaCFunction(name: "isSolid", args: 1, res: 1) { args in
+                let e = PXEntity.byID(args[0] as! Int64)
+                return [(e?.physics?.solid ?? false) ? 1 : 0]
+            },
+            LuaCFunction(name: "isStatic", args: 1, res: 1) { args in
+                let e = PXEntity.byID(args[0] as! Int64)
+                return [(e?.physics?.dynamic ?? false) ? 0 : 1]
+            },
+            LuaCFunction(name: "isCharacter", args: 1, res: 1) { args in
+                let e = PXEntity.byID(args[0] as! Int64)
+                return [e as? Character != nil ? 1 : 0]
+            },
         ]),
+
+        LuaCModule(name: "character", functions: [
+            LuaCFunction(name: "recieveDamage", args: 2, res: 0) { (args) -> [LuaValue] in
+                let c = self.getEntityByID(args[0], as: Character.self)
+                c.recieveDamage(damage: Int(args[1] as! Int64))
+                return []
+            }
+        ])
     ]
 
     init(context: GameContext) {

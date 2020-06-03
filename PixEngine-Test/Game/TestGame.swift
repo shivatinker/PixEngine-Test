@@ -11,8 +11,14 @@ import PixeNgine
 
 private class TimeHandler: PXEntity {
     private let context: GameContext
+    
+    private let module: LuaLModule = LuaLModule(functions: [
+        LuaFunction(name: "onFrame", args: 0, res: 0)
+    ])
+    
     override func update() {
         context.time += 1
+        context.lua.vm.call(module: module, script: "gamel", f: "onFrame")
     }
     init(context: GameContext) {
         self.context = context
@@ -105,36 +111,17 @@ class TestGame {
         scene.addEntity(hudCamera)
 
         // Setup background
-        for x in 1..<99 {
-            for y in 1..<99 {
-                let id = 1//Int.random(in: 0...1)
-                let tile: PXTile = PXTile(id: id)!
-                scene.setBackgroundTile(
-                    x: x,
-                    y: y,
-                    tile: tile)
-            }
-        }
-
         for x in 0..<100 {
-            for y in [0, 99] {
-                let tile: PXTile = PXTile(id: 1)!
-                tile.solid = true
+            for y in 0..<100 {
+                let border = x == 0 || y == 0 || x == 99 || y == 99
+                let id = border ? 1 : Int.random(in: 0...1)
+                let tile: PXTile = PXTile(id: id)!
+                tile.physics?.dynamic = false
                 scene.setBackgroundTile(
                     x: x,
                     y: y,
-                    tile: tile)
-            }
-        }
-
-        for y in 0..<100 {
-            for x in [0, 99] {
-                let tile: PXTile = PXTile(id: 1)!
-                tile.solid = true
-                scene.setBackgroundTile(
-                    x: x,
-                    y: y,
-                    tile: tile)
+                    tile: tile,
+                    solid: border)
             }
         }
 
