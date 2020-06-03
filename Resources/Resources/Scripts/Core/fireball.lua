@@ -10,7 +10,7 @@ local function vector_mul(v, c)
     return {x = c * v.x, y = c * v.y}
 end
 
-function module.update(id)
+function module.update(id) 
     --[[if (game.time() - init_times[id]) > 60 then
         init_times[id] = game.time()
         local pid = scene.addProjectile('fireball')
