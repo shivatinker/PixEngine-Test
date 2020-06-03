@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DFDF88D0B8C9134F1E41BF6 /* Pods_PixEngine_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB40175068FB8934AEC4D70A /* Pods_PixEngine_Test.framework */; };
+		DA18EB4624881D29006C8D05 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18EB4524881D29006C8D05 /* Scoreboard.swift */; };
+		DA18EB4824881D6F006C8D05 /* ScoreboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18EB4724881D6F006C8D05 /* ScoreboardProvider.swift */; };
+		DA18EB4A24881D87006C8D05 /* FirebaseScoreboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18EB4924881D87006C8D05 /* FirebaseScoreboardProvider.swift */; };
+		DA4B013324881F35001B4493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA4B013224881F35001B4493 /* GoogleService-Info.plist */; };
 		DA5D37C1246B0A6F006AB361 /* LuaScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */; };
 		DA92B33F246335CE00522899 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33B246335CD00522899 /* Fonts */; };
 		DA92B340246335CE00522899 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33C246335CE00522899 /* Scripts */; };
@@ -56,6 +61,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		79224A9784FF51A0AF4F4E48 /* Pods-PixEngine-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.release.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.release.xcconfig"; sourceTree = "<group>"; };
+		DA18EB4524881D29006C8D05 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		DA18EB4724881D6F006C8D05 /* ScoreboardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardProvider.swift; sourceTree = "<group>"; };
+		DA18EB4924881D87006C8D05 /* FirebaseScoreboardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseScoreboardProvider.swift; sourceTree = "<group>"; };
+		DA4B013224881F35001B4493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaScripting.swift; sourceTree = "<group>"; };
 		DA92B33B246335CD00522899 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
 		DA92B33C246335CE00522899 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Resources/Scripts; sourceTree = "<group>"; };
@@ -75,6 +85,8 @@
 		DAD4A19C2450CF390061167E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DAD4A1A12450D37E0061167E /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		DAF1199B2446452900208974 /* TestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGame.swift; sourceTree = "<group>"; };
+		DB40175068FB8934AEC4D70A /* Pods_PixEngine_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixEngine_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2463ED4442B4F506454718 /* Pods-PixEngine-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixEngine-Test.debug.xcconfig"; path = "Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +95,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB81DE82487DDFA00CDB317 /* PixeNgine.framework in Frameworks */,
+				5DFDF88D0B8C9134F1E41BF6 /* Pods_PixEngine_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2982DD29B0513CAD35913DCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79224A9784FF51A0AF4F4E48 /* Pods-PixEngine-Test.release.xcconfig */,
+				DD2463ED4442B4F506454718 /* Pods-PixEngine-Test.debug.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA18EB4424881D15006C8D05 /* Scoreboard */ = {
+			isa = PBXGroup;
+			children = (
+				DA18EB4524881D29006C8D05 /* Scoreboard.swift */,
+				DA18EB4724881D6F006C8D05 /* ScoreboardProvider.swift */,
+				DA18EB4924881D87006C8D05 /* FirebaseScoreboardProvider.swift */,
+			);
+			path = Scoreboard;
+			sourceTree = "<group>";
+		};
 		DA92B3162463359500522899 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +141,7 @@
 				DAA60778243E86CA00D0E349 /* PixEngine-Test */,
 				DAA60777243E86CA00D0E349 /* Products */,
 				DAA607BD243E873A00D0E349 /* Frameworks */,
+				2982DD29B0513CAD35913DCD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +156,7 @@
 		DAA60778243E86CA00D0E349 /* PixEngine-Test */ = {
 			isa = PBXGroup;
 			children = (
+				DA4B013224881F35001B4493 /* GoogleService-Info.plist */,
 				DAD4A19B2450CF280061167E /* Game */,
 				DAA60779243E86CA00D0E349 /* AppDelegate.swift */,
 				DAA6077B243E86CA00D0E349 /* SceneDelegate.swift */,
@@ -138,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				DAB81DE72487DDFA00CDB317 /* PixeNgine.framework */,
+				DB40175068FB8934AEC4D70A /* Pods_PixEngine_Test.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,6 +181,7 @@
 		DAD4A19B2450CF280061167E /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				DA18EB4424881D15006C8D05 /* Scoreboard */,
 				DAD4A1A02450D3570061167E /* Components */,
 				DAF1199B2446452900208974 /* TestGame.swift */,
 				DAD4A19C2450CF390061167E /* Character.swift */,
@@ -170,10 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAA6078A243E86CC00D0E349 /* Build configuration list for PBXNativeTarget "PixEngine-Test" */;
 			buildPhases = (
+				9FD40A671D8A00A188C4D3F6 /* [CP] Check Pods Manifest.lock */,
 				DAA60772243E86CA00D0E349 /* Sources */,
 				DAA60773243E86CA00D0E349 /* Frameworks */,
 				DAA60774243E86CA00D0E349 /* Resources */,
 				DAB81DE42487DC0B00CDB317 /* Embed Frameworks */,
+				5A617BC7CF5D3EFE309A8BD2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 				DAF9AB1F246844E400382CE1 /* PBXBuildRule */,
@@ -224,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA92B341246335CE00522899 /* Textures in Resources */,
+				DA4B013324881F35001B4493 /* GoogleService-Info.plist in Resources */,
 				DAA60786243E86CC00D0E349 /* LaunchScreen.storyboard in Resources */,
 				DA92B340246335CE00522899 /* Scripts in Resources */,
 				DAA60783243E86CC00D0E349 /* Assets.xcassets in Resources */,
@@ -235,6 +275,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A617BC7CF5D3EFE309A8BD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixEngine-Test/Pods-PixEngine-Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD40A671D8A00A188C4D3F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixEngine-Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DAA60772243E86CA00D0E349 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -243,9 +325,12 @@
 				DAA6077E243E86CA00D0E349 /* ViewController.swift in Sources */,
 				DAA6077A243E86CA00D0E349 /* AppDelegate.swift in Sources */,
 				DAA6077C243E86CA00D0E349 /* SceneDelegate.swift in Sources */,
+				DA18EB4624881D29006C8D05 /* Scoreboard.swift in Sources */,
 				DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */,
 				DAD4A19D2450CF390061167E /* Character.swift in Sources */,
+				DA18EB4824881D6F006C8D05 /* ScoreboardProvider.swift in Sources */,
 				DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */,
+				DA18EB4A24881D87006C8D05 /* FirebaseScoreboardProvider.swift in Sources */,
 				DAD4A1A22450D37E0061167E /* HUDController.swift in Sources */,
 				DA5D37C1246B0A6F006AB361 /* LuaScripting.swift in Sources */,
 				DAF1199C2446452900208974 /* TestGame.swift in Sources */,
@@ -330,6 +415,7 @@
 		};
 		DAA6078C243E86CC00D0E349 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79224A9784FF51A0AF4F4E48 /* Pods-PixEngine-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -402,6 +488,7 @@
 		};
 		DAB81DE62487DD6700CDB317 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD2463ED4442B4F506454718 /* Pods-PixEngine-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

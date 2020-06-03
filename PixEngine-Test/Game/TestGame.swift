@@ -11,14 +11,20 @@ import PixeNgine
 
 private class TimeHandler: PXEntity {
     private let context: GameContext
-    
+
     private let module: LuaLModule = LuaLModule(functions: [
         LuaFunction(name: "onFrame", args: 0, res: 0)
     ])
-    
+
     override func update() {
         context.time += 1
+        context.timer -= 1
+        context.timerText.text = "\(context.timer / 60)"
         context.lua.vm.call(module: module, script: "gamel", f: "onFrame")
+
+        if context.timer <= 0 {
+            context.game.endGame()
+        }
     }
     init(context: GameContext) {
         self.context = context
@@ -26,7 +32,7 @@ private class TimeHandler: PXEntity {
     }
 }
 
-class TestGame {
+public class TestGame {
     private let renderer: PXRenderer
     private let scale: Int = 3
 
@@ -40,35 +46,33 @@ class TestGame {
         PXv2f(screenW, screenH)
     }
 
-    private var player: Character
-    private var playerController: HUDController
+    private var player: Character!
+    private var playerController: HUDController!
 
-    private var jBg: PXStaticSprite
-    private var jPin: PXStaticSprite
+    private var jBg: PXStaticSprite!
+    private var jPin: PXStaticSprite!
     private var jOrigin: PXv2f {
         PXv2f(0, screenH) + PXv2f(70, -70)
     }
 
-    private var spellButton: PXStaticSprite
+    private var spellButton: PXStaticSprite!
 
     private var gameContext: GameContext
 
-    internal init(renderer: PXRenderer) {
-        self.renderer = renderer
+    public func endGame() {
+        let score = gameContext.score
+        newGame()
 
-        try! PXConfig.sharedTextureManager.loadAllTextures(
-            path: Bundle.main.resourceURL!.appendingPathComponent("Textures"))
-        try! PXConfig.resourceManager.loadTiles(
-            path: Bundle.main.url(
-                forResource: "tiles", withExtension: "json",
-                subdirectory: "Descriptors")!)
-        try! PXConfig.fontManager.loadAllFonts(
-            path: Bundle.main.resourceURL!.appendingPathComponent("Fonts"))
+        gameContext.scoreboard.acceptScore(score: score) { new in
+            if new {
+                self.gameContext.hsText.text = "\(score)"
+            }
+        }
+    }
 
+    private func newGame() {
 
-        // Create game context
-        gameContext = GameContext()
-        gameContext.lua = LuaScripting(context: gameContext)
+        gameContext.score = 0
 
         // Create scene
         let scene = PXScene(width: 100, height: 100)
@@ -79,7 +83,7 @@ class TestGame {
         let playerSprite = PXSprite(texture: PXConfig.sharedTextureManager.getTextureByID(id: "sprite_player"))
         player = Character(context: gameContext, name: "Player", controller: playerController, sprite: playerSprite)
 
-        player.pos = PXv2f(16, 16)
+        player.pos = PXv2f(16 * 50, 16 * 50)
         gameContext.player = player
         scene.addEntity(player)
 
@@ -133,10 +137,71 @@ class TestGame {
         gameContext.currentScene = scene
         renderer.scene = scene
 
+        // Add score label
         let text = PXText(text: "0")
-        text.pos = 32 * .ones
+        text.pos = PXv2f(32, 32 + 20)
         scene.addHudEntity(text)
         gameContext.scoreText = text
+
+        // Add time label
+        let timeText = PXText(text: "0")
+        timeText.pos = PXv2f(400, 32)
+        scene.addHudEntity(timeText)
+        gameContext.timerText = timeText
+
+        gameContext.timer = 60 * 10
+
+        // Add highscore label
+        let hsText = PXText(text: "0")
+        hsText.pos = PXv2f(32, 32)
+        scene.addHudEntity(hsText)
+        gameContext.hsText = hsText
+
+
+    }
+
+    internal init(renderer: PXRenderer) {
+        self.renderer = renderer
+
+        try! PXConfig.sharedTextureManager.loadAllTextures(
+            path: Bundle.main.resourceURL!.appendingPathComponent("Textures"))
+        try! PXConfig.resourceManager.loadTiles(
+            path: Bundle.main.url(
+                forResource: "tiles", withExtension: "json",
+                subdirectory: "Descriptors")!)
+        try! PXConfig.fontManager.loadAllFonts(
+            path: Bundle.main.resourceURL!.appendingPathComponent("Fonts"))
+
+
+        // Create game context
+        gameContext = GameContext()
+        gameContext.lua = LuaScripting(context: gameContext)
+
+        // Create scoreboard
+        gameContext.scoreboard = Scoreboard(provider: FirebaseScoreboardProvider())
+
+        gameContext.game = self
+
+        gameContext.scoreboard.ensureRegistered {
+            DispatchQueue.main.async {
+                self.newGame()
+                self.gameContext.scoreboard.getHighscore { (hs) in
+                    DispatchQueue.main.async {
+                        if let h = hs {
+                            self.gameContext.hsText.text = "\(h)"
+                        } else {
+                            self.gameContext.hsText.text = "0"
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // MARK: Buttons
+
+    private func onSpellButtonClicked() {
+
     }
 
     // MARK: User actions
@@ -179,17 +244,7 @@ class TestGame {
     public func onTap(_ xn: Float, _ yn: Float) {
         let tapPos = PXv2f(xn * screenW, yn * screenH)
         if spellButton.isInside(point: tapPos) {
-
-            for _ in 0..<1 {
-                let spell = Projectile(
-                    descriptor: PXConfig.resourceManager.loadFile(
-                        ProjectileDescriptor.self,
-                        file: Bundle.main.url(forResource: "fireball", withExtension: "json", subdirectory: "Descriptors/Projectiles")!),
-                    context: gameContext)
-                spell.center = player.center
-
-                gameContext.currentScene.addEntity(spell)
-            }
+            onSpellButtonClicked()
         }
     }
 }

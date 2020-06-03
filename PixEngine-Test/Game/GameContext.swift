@@ -17,4 +17,9 @@ public class GameContext {
     public var score: Int = 0
     public var time: Int64 = 0
     public var lua: LuaScripting!
+    public var scoreboard: Scoreboard!
+    public var timer: Int = 0
+    public var timerText: PXText!
+    public var hsText: PXText!
+    public var game: TestGame!
 }

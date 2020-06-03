@@ -9,6 +9,8 @@ target 'PixEngine-Test' do
 
   # Pods for PixEngine-Test
 
+pod 'Firebase/Analytics'
+pod 'Firebase/Database'
 podspec :path => '../PixeNgine/PixeNgine.podspec'
 
 end
