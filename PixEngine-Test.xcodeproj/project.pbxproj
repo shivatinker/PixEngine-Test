@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		DA18EB4824881D6F006C8D05 /* ScoreboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18EB4724881D6F006C8D05 /* ScoreboardProvider.swift */; };
 		DA18EB4A24881D87006C8D05 /* FirebaseScoreboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18EB4924881D87006C8D05 /* FirebaseScoreboardProvider.swift */; };
 		DA4B013324881F35001B4493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA4B013224881F35001B4493 /* GoogleService-Info.plist */; };
+		DA553CC1248930B800FEEDD8 /* ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA553CC0248930B800FEEDD8 /* ScoreVC.swift */; };
 		DA5D37C1246B0A6F006AB361 /* LuaScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */; };
 		DA92B33F246335CE00522899 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33B246335CD00522899 /* Fonts */; };
 		DA92B340246335CE00522899 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = DA92B33C246335CE00522899 /* Scripts */; };
@@ -66,6 +67,7 @@
 		DA18EB4724881D6F006C8D05 /* ScoreboardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardProvider.swift; sourceTree = "<group>"; };
 		DA18EB4924881D87006C8D05 /* FirebaseScoreboardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseScoreboardProvider.swift; sourceTree = "<group>"; };
 		DA4B013224881F35001B4493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA553CC0248930B800FEEDD8 /* ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVC.swift; sourceTree = "<group>"; };
 		DA5D37C0246B0A6F006AB361 /* LuaScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaScripting.swift; sourceTree = "<group>"; };
 		DA92B33B246335CD00522899 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = "<group>"; };
 		DA92B33C246335CE00522899 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Resources/Scripts; sourceTree = "<group>"; };
@@ -108,7 +110,6 @@
 				79224A9784FF51A0AF4F4E48 /* Pods-PixEngine-Test.release.xcconfig */,
 				DD2463ED4442B4F506454718 /* Pods-PixEngine-Test.debug.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,6 +121,14 @@
 				DA18EB4924881D87006C8D05 /* FirebaseScoreboardProvider.swift */,
 			);
 			path = Scoreboard;
+			sourceTree = "<group>";
+		};
+		DA553CBF248930AA00FEEDD8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DA553CC0248930B800FEEDD8 /* ScoreVC.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		DA92B3162463359500522899 /* Resources */ = {
@@ -181,6 +190,7 @@
 		DAD4A19B2450CF280061167E /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				DA553CBF248930AA00FEEDD8 /* UI */,
 				DA18EB4424881D15006C8D05 /* Scoreboard */,
 				DAD4A1A02450D3570061167E /* Components */,
 				DAF1199B2446452900208974 /* TestGame.swift */,
@@ -327,6 +337,7 @@
 				DAA6077C243E86CA00D0E349 /* SceneDelegate.swift in Sources */,
 				DA18EB4624881D29006C8D05 /* Scoreboard.swift in Sources */,
 				DAC5DDAA2454ADF700FFD590 /* GameContext.swift in Sources */,
+				DA553CC1248930B800FEEDD8 /* ScoreVC.swift in Sources */,
 				DAD4A19D2450CF390061167E /* Character.swift in Sources */,
 				DA18EB4824881D6F006C8D05 /* ScoreboardProvider.swift in Sources */,
 				DAC5DDA124546A5500FFD590 /* Projectile.swift in Sources */,

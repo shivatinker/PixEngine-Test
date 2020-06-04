@@ -8,6 +8,7 @@
 
 import Foundation
 import PixeNgine
+import UIKit
 
 private class TimeHandler: PXEntity {
     private let context: GameContext
@@ -59,13 +60,21 @@ public class TestGame {
 
     private var gameContext: GameContext
 
-    public func endGame() {
-        let score = gameContext.score
-        newGame()
+    private var parentView: UIViewController
 
+    public func endGame() {
+        gameContext.currentScene.paused = true
+        let score = gameContext.score
         gameContext.scoreboard.acceptScore(score: score) { new in
-            if new {
-                self.gameContext.highscore = score
+            DispatchQueue.main.async {
+                if new {
+                    self.gameContext.highscore = score
+                }
+                let vc = ScoreVC(score: score, isHighscore: new) {
+                    self.newGame()
+                    self.gameContext.currentScene.paused = false
+                }
+                self.parentView.present(vc, animated: true)
             }
         }
     }
@@ -161,8 +170,9 @@ public class TestGame {
 
     }
 
-    internal init(renderer: PXRenderer) {
+    internal init(renderer: PXRenderer, view: UIViewController) {
         self.renderer = renderer
+        self.parentView = view
 
         try! PXConfig.sharedTextureManager.loadAllTextures(
             path: Bundle.main.resourceURL!.appendingPathComponent("Textures"))
@@ -198,7 +208,7 @@ public class TestGame {
     // MARK: Buttons
 
     private func onSpellButtonClicked() {
-
+        endGame()
     }
 
     // MARK: User actions

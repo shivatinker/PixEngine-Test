@@ -45,7 +45,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         recognizer2.maximumNumberOfTouches = 1
 
         renderer = PXRenderer(view: mtkView)
-        game = TestGame(renderer: renderer)
+        game = TestGame(renderer: renderer, view: self)
     }
 
     private var active = false
