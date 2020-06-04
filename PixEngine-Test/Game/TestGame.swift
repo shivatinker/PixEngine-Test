@@ -65,7 +65,7 @@ public class TestGame {
 
         gameContext.scoreboard.acceptScore(score: score) { new in
             if new {
-                self.gameContext.hsText.text = "\(score)"
+                self.gameContext.highscore = score
             }
         }
     }
@@ -156,6 +156,7 @@ public class TestGame {
         hsText.pos = PXv2f(32, 32)
         scene.addHudEntity(hsText)
         gameContext.hsText = hsText
+        gameContext.highscore = gameContext.highscore
 
 
     }
@@ -187,11 +188,7 @@ public class TestGame {
                 self.newGame()
                 self.gameContext.scoreboard.getHighscore { (hs) in
                     DispatchQueue.main.async {
-                        if let h = hs {
-                            self.gameContext.hsText.text = "\(h)"
-                        } else {
-                            self.gameContext.hsText.text = "0"
-                        }
+                        self.gameContext.highscore = hs ?? 0
                     }
                 }
             }

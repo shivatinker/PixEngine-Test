@@ -20,6 +20,11 @@ public class GameContext {
     public var scoreboard: Scoreboard!
     public var timer: Int = 0
     public var timerText: PXText!
+    public var highscore: Int = 0 {
+        didSet {
+            hsText.text = "\(highscore)"
+        }
+    }
     public var hsText: PXText!
     public var game: TestGame!
 }
